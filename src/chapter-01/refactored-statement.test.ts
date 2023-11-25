@@ -1,6 +1,6 @@
 import refactoredStatement from "./refactored-statement";
-import plays from "./plays.json";
-import invoices from "./invoices.json";
+import plays from "./mocks/plays.json";
+import invoices from "./mocks/invoices.json";
 
 test("refactored statement", () => {
   const result = 
