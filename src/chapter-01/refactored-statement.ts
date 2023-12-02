@@ -11,7 +11,7 @@ const refactoredStatement = (invoice: Invoice, plays: Plays) => {
   }).format;
 
   for (let perf of invoice.performances) {
-    const play = plays[perf.playID];
+    const play = playFor(perf);
     let thisAmount = amountFor(perf, play);
 
     // soma créditos por volume
@@ -30,6 +30,10 @@ const refactoredStatement = (invoice: Invoice, plays: Plays) => {
   result += `Amount owed is ${format(totalAmount/100)}\n`;
   result += `You earned ${volumeCredits} credits\n`;
   return result;
+
+  function playFor(perf: Performance) {
+    return plays[perf.playID];
+  }
 
   function amountFor(perf: Performance, play: Play) {
     let result = 0;
