@@ -11,3 +11,4 @@ Identify the points that separate different parts of the overall behavior.
         Temporary variables create many locally scoped names, complicating extractions
 
 4.  Inline variable - remove `play` variable
+5.  Change function declaration - remove `playFor` from the parameters `amountFor`

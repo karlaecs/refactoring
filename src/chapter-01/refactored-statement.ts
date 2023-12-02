@@ -1,4 +1,4 @@
-import { Invoice, Plays, Performance, Play } from "./types";
+import { Invoice, Plays, Performance } from "./types";
 
 const refactoredStatement = (invoice: Invoice, plays: Plays) => {
   let totalAmount = 0;
@@ -11,7 +11,7 @@ const refactoredStatement = (invoice: Invoice, plays: Plays) => {
   }).format;
 
   for (let perf of invoice.performances) {
-    let thisAmount = amountFor(perf, playFor(perf));
+    let thisAmount = amountFor(perf);
 
     // soma créditos por volume
     volumeCredits += Math.max(perf.audience - 30, 0);
@@ -34,10 +34,10 @@ const refactoredStatement = (invoice: Invoice, plays: Plays) => {
     return plays[perf.playID];
   }
 
-  function amountFor(perf: Performance, play: Play) {
+  function amountFor(perf: Performance) {
     let result = 0;
 
-    switch(play.type) {
+    switch(playFor(perf).type) {
       case "tragedy":
         result = 40000;
         if(perf.audience > 30) {
@@ -53,7 +53,7 @@ const refactoredStatement = (invoice: Invoice, plays: Plays) => {
         break;
       }
       default:
-        throw new Error(`unknown type: ${play.type}`)
+        throw new Error(`unknown type: ${playFor(perf).type}`)
     }
 
     return result
