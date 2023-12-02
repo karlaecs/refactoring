@@ -1,6 +1,6 @@
 # Steps
 
-### Decomposing the statement function
+### 1. Decomposing the statement function
 
 Identify the points that separate different parts of the overall behavior.
 
@@ -13,3 +13,7 @@ Identify the points that separate different parts of the overall behavior.
 4.  Inline variable - remove `play` variable
 5.  Change function declaration - remove `playFor` from the parameters `amountFor`
 6.  Inline variable - remove `thisAmount` variable
+
+### 2. Extracting the calculation of credits by volume
+
+1.  Extract function - `volumeCreditsFor`
