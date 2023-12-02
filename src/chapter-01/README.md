@@ -38,3 +38,7 @@ Identify the points that separate different parts of the overall behavior.
 3.  Rename variable - `volumeCredits` to `result` in totalVolumeCredits
 4.  Replace temp with query - `volumeCredits` to `totalVolumeCredits` function
 5.  Inline variable - remove `volumeCredits` variable
+
+### 5. Removing the total amount variable
+
+Repeat the previous sequence (step 4)
