@@ -24,6 +24,7 @@ Identify the points that separate different parts of the overall behavior.
 1.  Extract function - `formatFor`
 2.  Change function declaration - `formatFor` to `usd`
 
-### 3. Removing the total volume credits variable
+### 4. Removing the total volume credits variable
 
 1. Split loop - to separate the accumulation into `volumeCredits`
+2. Extract function - `totalVolumeCredits`
