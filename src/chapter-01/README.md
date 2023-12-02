@@ -17,3 +17,8 @@ Identify the points that separate different parts of the overall behavior.
 ### 2. Extracting the calculation of credits by volume
 
 1.  Extract function - `volumeCreditsFor`
+2.  Rename variable - `volumeCredits` to `result` in volumeCreditsFor
+
+### 3. Removing the format variable
+
+1.  Extract function - `formatFor`
