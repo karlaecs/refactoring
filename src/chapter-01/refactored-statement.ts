@@ -11,8 +11,6 @@ const refactoredStatement = (invoice: Invoice, plays: Plays) => {
   }).format;
 
   for (let perf of invoice.performances) {
-    let thisAmount = amountFor(perf);
-
     // soma créditos por volume
     volumeCredits += Math.max(perf.audience - 30, 0);
 
@@ -22,8 +20,8 @@ const refactoredStatement = (invoice: Invoice, plays: Plays) => {
     }
 
     // exibe a linha para esta requisição
-    result += `   ${playFor(perf).name}: ${format(thisAmount/100)} (${perf.audience} seats)\n`;
-    totalAmount += thisAmount;
+    result += `   ${playFor(perf).name}: ${format( amountFor(perf)/100)} (${perf.audience} seats)\n`;
+    totalAmount +=  amountFor(perf);
   }
 
   result += `Amount owed is ${format(totalAmount/100)}\n`;

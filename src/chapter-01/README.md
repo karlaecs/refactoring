@@ -12,3 +12,4 @@ Identify the points that separate different parts of the overall behavior.
 
 4.  Inline variable - remove `play` variable
 5.  Change function declaration - remove `playFor` from the parameters `amountFor`
+6.  Inline variable - remove `thisAmount` variable
