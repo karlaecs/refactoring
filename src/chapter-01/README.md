@@ -26,7 +26,15 @@ Identify the points that separate different parts of the overall behavior.
 
 ### 4. Removing the total volume credits variable
 
-1. Split loop - to separate the accumulation into `volumeCredits`
-2. Extract function - `totalVolumeCredits`
-3. Rename variable - `volumeCredits` to `result` in totalVolumeCredits
-4. Replace temp with query - `volumeCredits` to `totalVolumeCredits` function
+1.  Split loop - to separate the accumulation into `volumeCredits`
+
+        If we measured the code execution time before and after this refactoring, we would probably not notice any significant change in speed! In general this is what happens when repeating loops.
+
+        Many of our intuitions about performance are contradicted by smart compilers, modern caching techniques.
+
+        So remember, if your refactoring introduces performance degradations, finish before refactoring and make performance adjustments later.
+
+2.  Extract function - `totalVolumeCredits`
+3.  Rename variable - `volumeCredits` to `result` in totalVolumeCredits
+4.  Replace temp with query - `volumeCredits` to `totalVolumeCredits` function
+5.  Inline variable - remove `volumeCredits` variable
