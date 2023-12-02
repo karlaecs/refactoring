@@ -2,7 +2,6 @@ import { Invoice, Plays, Performance } from "./types";
 
 const refactoredStatement = (invoice: Invoice, plays: Plays) => {
   let totalAmount = 0;
-  let volumeCredits = totalVolumeCredits();
   let result = `Statement for ${invoice.customer}\n`;
 
   for (let perf of invoice.performances) {
@@ -12,7 +11,7 @@ const refactoredStatement = (invoice: Invoice, plays: Plays) => {
   }
 
   result += `Amount owed is ${usd(totalAmount/100)}\n`;
-  result += `You earned ${volumeCredits} credits\n`;
+  result += `You earned ${totalVolumeCredits()} credits\n`;
   return result;
 
   function usd(aNumber: number) {

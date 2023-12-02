@@ -29,3 +29,4 @@ Identify the points that separate different parts of the overall behavior.
 1. Split loop - to separate the accumulation into `volumeCredits`
 2. Extract function - `totalVolumeCredits`
 3. Rename variable - `volumeCredits` to `result` in totalVolumeCredits
+4. Replace temp with query - `volumeCredits` to `totalVolumeCredits` function
