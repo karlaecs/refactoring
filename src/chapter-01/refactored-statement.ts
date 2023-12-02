@@ -9,15 +9,15 @@ const refactoredStatement = (invoice: Invoice, plays: Plays) => {
     volumeCredits += volumeCreditsFor(perf);
 
     // exibe a linha para esta requisição
-    result += `   ${playFor(perf).name}: ${formatFor(amountFor(perf)/100)} (${perf.audience} seats)\n`;
+    result += `   ${playFor(perf).name}: ${usd(amountFor(perf)/100)} (${perf.audience} seats)\n`;
     totalAmount +=  amountFor(perf);
   }
 
-  result += `Amount owed is ${formatFor(totalAmount/100)}\n`;
+  result += `Amount owed is ${usd(totalAmount/100)}\n`;
   result += `You earned ${volumeCredits} credits\n`;
   return result;
 
-  function formatFor(aNumber: number) {
+  function usd(aNumber: number) {
     return new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: "USD",

@@ -22,3 +22,4 @@ Identify the points that separate different parts of the overall behavior.
 ### 3. Removing the format variable
 
 1.  Extract function - `formatFor`
+2.  Change function declaration - `formatFor` to `usd`
